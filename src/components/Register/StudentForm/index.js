@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Icon, Card, Button, Input, message, Row, Avatar } from 'antd';
+import { DatePicker, Card, Button, Input, message, Avatar, Row, Col } from 'antd';
 
 import {
   FormRegister,
@@ -36,29 +36,35 @@ import {
       <Container>
         <Card>
           <Row style={{display: 'flex', justifyContent: 'flex-start' }}>
-            <Avatar size={40} icon="profile" />
-            <FormTitle>Cadastrar empresas</FormTitle>
+            <Avatar size={40} icon="user" />
+            <FormTitle>Cadastrar aluno</FormTitle>
           </Row>
           <FormRegister onSubmit={handleSubmit} className="login-form">
-            <FormRegister.Item>
-              {getFieldDecorator('Empresa', {
-                rules: [{ required: true, message: 'Digite o nome da empresa' }],
+            <FormRegister.Item label="Nome">
+              {getFieldDecorator('Aluno', {
+                rules: [{ required: true, message: 'Digite o nome do aluno' }],
               })(
-                <Input
-                  prefix={<Icon type="profile" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                  placeholder="nome empresa"
-                />,
+                <Input placeholder="digite o nome do aluno aluno" />,
               )}
             </FormRegister.Item>
-            <FormRegister.Item>
-              {getFieldDecorator('Endereço', {
+            <FormRegister.Item label="Endereço">
+              {getFieldDecorator('endereco', {
+                rules: [{ required: true, message: 'Please input your Password!' }],
+              })(
+                <Input placeholder="digite o endereço do aluno"/>,
+              )}
+            </FormRegister.Item>
+            <FormRegister.Item label="CPF do aluno">
+              {getFieldDecorator('CPF', {
                 rules: [{ required: true, message: 'Please input your Password!' }],
               })(
                 <Input
-                  prefix={<Icon type="home" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                  placeholder="endereço"
+                  placeholder="digite o cpf do aluno"
                 />,
               )}
+            </FormRegister.Item>
+            <FormRegister.Item label="Data de nascimento">
+              <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" />
             </FormRegister.Item>
             <FormRegister.Item>
               <Button
@@ -75,5 +81,5 @@ import {
     );      
   }
   
-  const CompanyForm = FormRegister.create({ name: 'register' })(RegistrationForm);
-  export default CompanyForm;
+  const StudentyForm = FormRegister.create({ name: 'register' })(RegistrationForm);
+  export default StudentyForm;

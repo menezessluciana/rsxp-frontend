@@ -37,16 +37,16 @@ import {
         <Card>
           <Row style={{display: 'flex', justifyContent: 'flex-start' }}>
             <Avatar size={40} icon="profile" />
-            <FormTitle>Cadastrar empresas</FormTitle>
+            <FormTitle>Cadastrar escolas</FormTitle>
           </Row>
           <FormRegister onSubmit={handleSubmit} className="login-form">
             <FormRegister.Item>
-              {getFieldDecorator('Empresa', {
-                rules: [{ required: true, message: 'Digite o nome da empresa' }],
+              {getFieldDecorator('Escola', {
+                rules: [{ required: true, message: 'Digite o nome da escola' }],
               })(
                 <Input
                   prefix={<Icon type="profile" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                  placeholder="nome empresa"
+                  placeholder="nome escola"
                 />,
               )}
             </FormRegister.Item>
@@ -72,8 +72,9 @@ import {
           </FormRegister>
         </Card>
       </Container>
-    );      
+    );
+      
   }
   
-  const CompanyForm = FormRegister.create({ name: 'register' })(RegistrationForm);
-  export default CompanyForm;
+  const SchoolForm = FormRegister.create({ name: 'register' })(RegistrationForm);
+  export default SchoolForm;
