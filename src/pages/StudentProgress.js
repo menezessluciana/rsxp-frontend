@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { COLOR_SUPORTE_SUCCESS , COLOR_SUPORTE_DANGER } from '../styles';
-import { Typography, Rate, Avatar, Button, Divider, Input, Progress } from 'antd';
+import { Typography, Rate, Button, Divider, Input } from 'antd';
+import StudentyProgress from '../components/Students/StudentHeader';
 
 const { TextArea } = Input;
 const { Title } = Typography;
@@ -15,7 +16,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-      width: 500px;
+      width: 600px;
       height: 95%;
       overflow: hidden;
       padding: 10px 20px;
@@ -64,23 +65,12 @@ const softSkill = ['Comunicação interpessoal',
 const StudentProgress = () => (
     <Container>
         <Content>
-            <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                <div style={{display: 'flex'}}>
-                    <Avatar size={64} icon="user" />
-                    <div style={{ marginLeft: 15 }}>
-                        <Title style={{ margin: 0}} level={3}>Josimar Gomes</Title>
-                        <Title style={{ margin: 0}} level={4}>Escola Integral</Title>
-                    </div>
-                </div>
-                <div>
-                <Progress type="circle" percent={75} width={64}   strokeColor={{
-                    '0%': '#108ee9',
-                    '100%': '#87d068',
-                }}/>
-                </div>
-            </div>
+            <StudentyProgress
+                studentName="Josimar dos Santos Gomes"
+                schoolName="Maria Cristina do amaral"
+                progress={46}
+            />
             <Divider />
-
             <div style={{display: 'flex', justifyContent: 'center'}}>
                 <TitleLabel level={4}>Habilidade profissionais</TitleLabel>
             </div>

@@ -1,12 +1,15 @@
 import React from 'react';
+import './App.css';
 import StudentEvalution from './pages/StudentEvaluation';
 import StudentProgress from './pages/StudentProgress';
-import './App.css';
-
+import CompanyForm from './components/Students/List'
+import Layout from './components/Layout';
 
 function App() {
   return (
-    <StudentProgress/>
+    <Layout>
+      <CompanyForm/>
+    </Layout>
   );
 }
 
