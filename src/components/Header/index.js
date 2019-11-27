@@ -40,11 +40,11 @@ const Header = ({ style }) => (
       <Link to="/register/school">
         <Button>Escolas</Button>
       </Link>
-      <Link to="/students/list">
-        <Button>Lista de alunos</Button>
-      </Link>
       <Link to="/trainning/list">
         <Button>Lista de treinamentos</Button>
+      </Link>
+      <Link to="/students/list">
+        <Button>Lista de alunos</Button>
       </Link>
     </Row>
   </AntdHeader>

@@ -65,7 +65,7 @@ const hardSkills = ['JavaScript', 'NodeJS', 'ReactJS', 'React Native'];
 
 const softSkill = ['Comunicação interpessoal',
                    'Capacidade de persuasão',
-                   'Proatividade',
+                   'Proatividade', 'Trabalho em equipe'
  ];
 
 const StudentEvaluation = () => (

@@ -37,7 +37,7 @@ function App() {
               component={TrainningList}
             />
             <Route
-              path="/tranning/new"
+              path="/trainning/new"
               component={BookingTrainning}
             />
             <Route

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, List, Avatar, Button } from 'antd';
+import { Card, List, Icon, Button } from 'antd';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -65,8 +65,11 @@ export default function() {
     return (
         <Container>
             <Card>
-                <Link to="/tranning/new">
-                    <Button type="dashed">AGENDAR NOVO TREINAMENTO</Button>
+                <Link to="/trainning/new">
+                    <Button type="dashed">
+                        <Icon type="solution" />
+                        AGENDAR NOVO TREINAMENTO
+                    </Button>
                 </Link>
             </Card>
             <List
@@ -81,14 +84,12 @@ export default function() {
                   }}
                 dataSource={data}
                 renderItem={item => (
-                    <Link to="tranning/new">
-                        <List.Item>
-                            <CardList title={item.title} bordered={false} style={{background: getColors()}}>
-                                <h2>{ item.content }</h2>
-                                { item.date }
-                            </CardList>
-                        </List.Item>
-                    </Link>
+                    <List.Item>
+                        <CardList title={item.title} bordered={false} style={{background: getColors()}}>
+                            <h2>{ item.content }</h2>
+                            { item.date }
+                        </CardList>
+                    </List.Item>
                 )}
             />
         </Container>
