@@ -3,13 +3,17 @@ import { Card, Statistic, Col, Row, Icon, Button, Result } from 'antd'
 
 export default function() {
     return (
+        <>
+       <div style={{display: 'flex',justifyContent: 'center'}}>
+           <h2>Alunos em destaque</h2>
+       </div>
         <div style={{ background: '#ECECEC', padding: '30px' }}>
             <Row gutter={16}>
             <Col span={12}>
                 <Card>
                 <Statistic
-                    title="Active"
-                    value={11.28}
+                    title="Bernardo Campos"
+                    value={82.28}
                     precision={2}
                     valueStyle={{ color: '#3f8600' }}
                     prefix={<Icon type="arrow-up" />}
@@ -20,20 +24,8 @@ export default function() {
             <Col span={12}>
                 <Card>
                 <Statistic
-                    title="Idle"
-                    value={9.3}
-                    precision={2}
-                    valueStyle={{ color: '#cf1322' }}
-                    prefix={<Icon type="arrow-down" />}
-                    suffix="%"
-                />
-                </Card>
-            </Col>
-            <Col span={12}>
-                <Card>
-                <Statistic
-                    title="Active"
-                    value={11.28}
+                    title="Fernanda Souza"
+                    value={70.89}
                     precision={2}
                     valueStyle={{ color: '#3f8600' }}
                     prefix={<Icon type="arrow-up" />}
@@ -44,29 +36,31 @@ export default function() {
             <Col span={12}>
                 <Card>
                 <Statistic
-                    title="Idle"
-                    value={9.3}
+                    title="Josimar Gomes"
+                    value={67.89}
                     precision={2}
-                    valueStyle={{ color: '#cf1322' }}
-                    prefix={<Icon type="arrow-down" />}
+                    valueStyle={{ color: '#3f8600' }}
+                    prefix={<Icon type="arrow-up" />}
+                    suffix="%"
+                />
+                </Card>
+            </Col>
+            <Col span={12}>
+                <Card>
+                <Statistic
+                    title="João Augusto"
+                    value={56.66}
+                    precision={2}
+                    valueStyle={{ color: '#3f8600' }}
+                    prefix={<Icon type="arrow-up" />}
                     suffix="%"
                 />
                 </Card>
             </Col>
             </Row>
             <Row>
-            <Result
-                    status="success"
-                    title="Successfully Purchased Cloud Server ECS!"
-                    subTitle="Order number: 2017182818828182881 Cloud server configuration takes 1-5 minutes, please wait."
-                    extra={[
-                    <Button type="primary" key="console">
-                        Go Console
-                    </Button>,
-                    <Button key="buy">Buy Again</Button>,
-                    ]}
-                />
             </Row>
         </div>
+        </>
     )
 }
