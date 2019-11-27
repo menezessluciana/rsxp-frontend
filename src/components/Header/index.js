@@ -52,6 +52,9 @@ const Header = ({ style }) => (
       <Link to="/trainning/list">
         <Button>Lista de treinamentos</Button>
       </Link>
+      <Link to="/students/list">
+        <Button>Lista de alunos</Button>
+      </Link>
     </Row>
   </AntdHeader>
 );
