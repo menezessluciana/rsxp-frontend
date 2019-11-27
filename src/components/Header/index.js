@@ -40,8 +40,14 @@ const Header = ({ style }) => (
       <Link to="/register/school">
         <Button>Escolas</Button>
       </Link>
+      <Link to="/maps">
+        <Button>Escolas disponiveis</Button>
+      </Link>
       <Link to="/students/list">
         <Button>Lista de alunos</Button>
+      </Link>
+      <Link to="/student/progress">
+        <Button>Progresso do aluno</Button>
       </Link>
       <Link to="/trainning/list">
         <Button>Lista de treinamentos</Button>
