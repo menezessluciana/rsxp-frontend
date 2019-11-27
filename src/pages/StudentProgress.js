@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import moment from 'moment';
-import { Typography, Rate, Avatar, Divider, Progress } from 'antd';
-
-const currentDate = moment().format('L');
+import { Typography, Rate, Divider } from 'antd';
+import StudentyProgress from '../components/Students/StudentHeader';
 
 const { Title } = Typography;
 
@@ -16,7 +14,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-      width: 500px;
+      width: 600px;
       height: 95%;
       overflow: hidden;
       padding: 10px 20px;
@@ -44,30 +42,12 @@ const softSkill = ['Comunicação interpessoal',
 const StudentProgress = () => (
     <Container>
         <Content>
-            <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                <div style={{display: 'flex'}}>
-                    <Avatar size={64} icon="user" />
-                    <div style={{ marginLeft: 15 }}>
-                        <Title style={{ margin: 0}} level={3}>Josimar Gomes</Title>
-                        <Title style={{ margin: 0}} level={4}>Escola Integral</Title>
-                    </div>
-                </div>
-                <div>
-                <Progress type="circle" 
-                    percent={75} 
-                    width={64}   
-                    strokeColor={{
-                    '0%': '#108ee9',
-                    '100%': '#87d068',
-                    }}
-                />
-                </div>
-            </div>
-            <div style={{marginTop: 10}}>
-                 <span>Data da avaliação: {currentDate}</span>
-            </div>
+            <StudentyProgress
+                studentName="Josimar dos Santos Gomes"
+                schoolName="Maria Cristina do amaral"
+                progress={46}
+            />
             <CustomDivider />
-
             <div style={{display: 'flex', justifyContent: 'center'}}>
                 <TitleLabel level={4}>Habilidade profissionais</TitleLabel>
             </div>
