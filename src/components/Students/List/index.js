@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table } from 'antd';
 import StudentHeader from '../StudentHeader';
+import { Link } from 'react-router-dom';
 
 import { Container, Content } from './styles';
 
@@ -10,11 +11,13 @@ const columns = [
     dataIndex: 'name',
     key: 'name',
     render: (text, record) => (
-        <StudentHeader
-            studentName={record.studentName}
-            schoolName={record.schoolName}
-            progress={record.progress}
-        />
+        <Link to="/students/233/evaluation">
+            <StudentHeader
+                studentName={record.studentName}
+                schoolName={record.schoolName}
+                progress={record.progress}
+            />
+        </Link>
     )
   },
 ];

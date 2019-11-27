@@ -16,7 +16,7 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-      width: 500px;
+      width: 600px;
       height: 95%;
       overflow: hidden;
       padding: 10px 20px;
