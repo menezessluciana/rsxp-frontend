@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import locale from 'antd/es/date-picker/locale/pt_BR';
-import { Typography, Divider, Calendar, DatePicker, Button } from 'antd';
+import { Typography, Divider, DatePicker, Button } from 'antd';
 import { Select } from 'antd';
 import { COLOR_SUPORTE_SUCCESS , COLOR_SUPORTE_DANGER } from '../styles';
 

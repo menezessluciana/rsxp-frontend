@@ -9,6 +9,7 @@ import BookingTrainning from './pages/BookingTrainning';
 import Dashboard from './pages/Dashboard';
 import TrainningList from './pages/Trainninglist';
 import Layout from './components/Layout';
+import SchoolsMap from './components/SchoolsMap';
 
 
 function App() {
@@ -43,6 +44,16 @@ function App() {
             <Route
               path="/"
               component={Dashboard}
+              exact
+            />
+            <Route
+              path="/maps"
+              component={SchoolsMap}
+              exact
+            />
+            <Route
+              path="/student/progress"
+              component={StudentProgress}
               exact
             />
           </Layout>
