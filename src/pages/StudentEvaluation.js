@@ -28,6 +28,12 @@ const TitleLabel =styled(Title)`
     display: inline;
 `;
 
+const CustomDivider = styled(Divider)`
+     &.ant-divider-horizontal{
+       margin: 12px 0;
+    }
+`;
+
 const SaveButton = styled(Button)`
     &&.ant-btn {
       background-color: ${COLOR_SUPORTE_SUCCESS};
@@ -70,8 +76,7 @@ const StudentEvaluation = () => (
                 schoolName="Maria Cristina do amaral"
                 progress={46}
             />
-            <Divider />
-
+            <CustomDivider />
             <div style={{display: 'flex', justifyContent: 'center'}}>
                 <TitleLabel level={4}>Habilidade profissionais</TitleLabel>
             </div>
@@ -94,7 +99,7 @@ const StudentEvaluation = () => (
              <span style={{fontWeight: 600, color: 'rgba(0, 0, 0, 0.85)', fontSize: 15}}>Considerações Finais</span>
              <TextArea style={{marginTop: 10}}/>
 
-             <div style={{display: 'flex', justifyContent: 'flex-end', marginTop: 10}}>
+             <div style={{display: 'flex', justifyContent: 'flex-end', marginTop: 10, height: '100%'}}>
                  <CancelButton icon="close">Cancelar</CancelButton>
                  <SaveButton icon="save">Salvar</SaveButton>
              </div>

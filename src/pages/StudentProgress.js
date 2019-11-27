@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { COLOR_SUPORTE_SUCCESS , COLOR_SUPORTE_DANGER } from '../styles';
-import { Typography, Rate, Button, Divider, Input } from 'antd';
+import { Typography, Rate, Divider } from 'antd';
 import StudentyProgress from '../components/Students/StudentHeader';
 
-const { TextArea } = Input;
 const { Title } = Typography;
 
 const Container = styled.div`
@@ -28,30 +26,9 @@ const TitleLabel =styled(Title)`
     display: inline;
 `;
 
-const SaveButton = styled(Button)`
-    &&.ant-btn {
-      background-color: ${COLOR_SUPORTE_SUCCESS};
-      border-color: ${COLOR_SUPORTE_SUCCESS};
-      color: #ffffff;
-    }
-    &&.ant-btn:hover, .ant-btn:focus {
-      color: #ffffff;
-      background-color: ${COLOR_SUPORTE_SUCCESS};
-      border-color: ${COLOR_SUPORTE_SUCCESS};
-    }
-`;
-
-const CancelButton = styled(Button)`
-    &&.ant-btn {
-      margin-right: 10px;
-      background-color: ${COLOR_SUPORTE_DANGER};
-      border-color: ${COLOR_SUPORTE_DANGER};
-      color: #ffffff;
-    }
-    &&.ant-btn:hover, .ant-btn:focus {
-      color: #ffffff;
-      background-color: ${COLOR_SUPORTE_DANGER};
-      border-color: ${COLOR_SUPORTE_DANGER};
+const CustomDivider = styled(Divider)`
+     &.ant-divider-horizontal{
+       margin: 12px 0;
     }
 `;
 
@@ -70,14 +47,14 @@ const StudentProgress = () => (
                 schoolName="Maria Cristina do amaral"
                 progress={46}
             />
-            <Divider />
+            <CustomDivider />
             <div style={{display: 'flex', justifyContent: 'center'}}>
                 <TitleLabel level={4}>Habilidade profissionais</TitleLabel>
             </div>
             {hardSkills.map((skill, index) => 
             <div style={{display: 'flex', justifyContent: 'space-between', width: '100%'}}>
                 <span> {index +1}) {skill}</span>
-                <Rate disabled />
+                <Rate disabled defaultValue={index +2} />
             </div>
              )}
               <div style={{display: 'flex', justifyContent: 'center'}}>
@@ -88,15 +65,10 @@ const StudentProgress = () => (
                 <span> {index + 1}) {skill}</span>
                 <Rate disabled defaultValue={index +1} />
             </div>
-             )}
-
+             )} 
+            <CustomDivider />
              <span style={{fontWeight: 600, color: 'rgba(0, 0, 0, 0.85)', fontSize: 15,display: 'block' }}>Considerações Finais</span>
              <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</span>
-
-             <div style={{display: 'flex', justifyContent: 'flex-end', marginTop: 10}}>
-                 <CancelButton icon="close">Cancelar</CancelButton>
-                 <SaveButton icon="save">Salvar</SaveButton>
-             </div>
         </Content>
     </Container>
 );

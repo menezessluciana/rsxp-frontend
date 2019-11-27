@@ -1,10 +1,12 @@
 import React from 'react';
 import { Progress, Avatar, Typography } from 'antd';
-
+import moment from 'moment';
+const currentDate = moment().format('L');
 const { Title } = Typography;
 
 export default function({ studentName, schoolName, progress }) {
     return (
+        <>
         <div style={{display: 'flex', justifyContent: 'space-between'}}>
             <div style={{display: 'flex'}}>
                 <Avatar size={64} icon="user" />
@@ -20,5 +22,9 @@ export default function({ studentName, schoolName, progress }) {
             }}/>
             </div>
         </div>
+         <div style={{marginTop: 10}}>
+            <span>Data da avaliação: {currentDate}</span>
+         </div>
+         </>
     )
 }
