@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Icon, Card, Button, Input, message, Row, Avatar } from 'antd';
-
+import axios from 'axios';
 import {
   FormRegister,
   Container,
@@ -21,10 +21,20 @@ import {
 
           setLoading(true);
           // handle requsty
-          setTimeout(() => {
+          axios.post("http://localhost:3333/people", {            
+            "name": values.name,
+            "type": "Empresa",
+            "documentIdentifier": values.cpf || "32653424765",
+            "adress": values.endereco || "rua do rio grande",
+            "city": "rio grande",
+            "state": "SC",
+            "cellphone": "9877765444",
+            "email": "oi@rocketseat.com",
+            "password_hash":"rocketseat"              
+          }).then(() => {
             message.success("Cadastro realizado com sucesso!");
             setLoading(false);
-          }, 1500)
+          })
 
         }
       });

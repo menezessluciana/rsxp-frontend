@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Icon, Card, Button, Input, message, Row, Avatar } from 'antd';
+import axios from 'axios';
 
 import {
   FormRegister,
@@ -21,10 +22,22 @@ import {
 
           setLoading(true);
           // handle requsty
-          setTimeout(() => {
+          axios.post("http://localhost:3333/people", {            
+            "name": values.name,
+            "type": "Escola",
+            "documentIdentifier": values.cpf || "32653424765",
+            "adress": values.endereco || "rua do rio grande",
+            "city": "rio grande",
+            "state": "SC",
+            "cellphone": "9877765444",
+            "email": "oi@rocketseat.com",
+            "password_hash":"rocketseat"              
+          }).then((res) => {
+            console.log("ress", res)
             message.success("Cadastro realizado com sucesso!");
             setLoading(false);
-          }, 1500)
+          }).catch(err => console.log("errrou", err))
+          console.log("fimmmm")
 
         }
       });

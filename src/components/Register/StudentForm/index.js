@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { DatePicker, Card, Button, Input, message, Avatar, Row, Col } from 'antd';
+import axios from 'axios';
 
 import {
   FormRegister,
@@ -21,11 +22,20 @@ import {
 
           setLoading(true);
           // handle requsty
-          setTimeout(() => {
+          axios.post("http://localhost:3333/people", {            
+            "name": values.name,
+            "type": "Aluno",
+            "documentIdentifier": values.cpf || "32653424765",
+            "adress": values.endereco || "rua do rio grande",
+            "city": "rio grande",
+            "state": "SC",
+            "cellphone": "9877765444",
+            "email": "oi@rocketseat.com",
+            "password_hash":"rocketseat"              
+          }).then(() => {
             message.success("Cadastro realizado com sucesso!");
             setLoading(false);
-          }, 1500)
-
+          })
         }
       });
     };
@@ -41,22 +51,22 @@ import {
           </Row>
           <FormRegister onSubmit={handleSubmit} className="login-form">
             <FormRegister.Item label="Nome">
-              {getFieldDecorator('Aluno', {
-                rules: [{ required: true, message: 'Digite o nome do aluno' }],
+              {getFieldDecorator('name', {
+                rules: [{ required: false, message: 'Digite o nome do aluno' }],
               })(
                 <Input placeholder="digite o nome do aluno aluno" />,
               )}
             </FormRegister.Item>
             <FormRegister.Item label="Endereço">
               {getFieldDecorator('endereco', {
-                rules: [{ required: true, message: 'Please input your Password!' }],
+                rules: [{ required: false, message: 'Please input your Password!' }],
               })(
                 <Input placeholder="digite o endereço do aluno"/>,
               )}
             </FormRegister.Item>
             <FormRegister.Item label="CPF do aluno">
               {getFieldDecorator('CPF', {
-                rules: [{ required: true, message: 'Please input your Password!' }],
+                rules: [{ required: false, message: 'Please input your Password!' }],
               })(
                 <Input
                   placeholder="digite o cpf do aluno"

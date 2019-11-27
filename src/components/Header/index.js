@@ -31,6 +31,7 @@ const Header = ({ style }) => (
             <Avatar size={44} icon="user" />
         </FlexEndContainer>
       </Col>
+      <h2 style={{marginRight: '20px', color: "#fff" }}>\ TeenDev /</h2>
       <Link to="/register/company">
         <Button>Empresas</Button>
       </Link>
