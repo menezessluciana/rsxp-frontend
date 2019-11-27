@@ -1,13 +1,14 @@
 import React from 'react';
 import {
-  Layout, Row, Col, Avatar
+  Layout, Row, Col, Avatar, Button
 } from 'antd';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { COLOR_BRAND_PRIMARY } from '../../styles'
 
 const AntdHeader = styled(Layout.Header)`
   display: flex;
-  height: 64px;
+  height: 100px;
   background-color: ${COLOR_BRAND_PRIMARY};
   padding: 0 24px;
   z-index: 2;
@@ -30,6 +31,18 @@ const Header = ({ style }) => (
             <Avatar size={44} icon="user" />
         </FlexEndContainer>
       </Col>
+      <Link to="/register/company">
+        <Button>Empresas</Button>
+      </Link>
+      <Link to="/register/studenty">
+        <Button>Alunos</Button>
+      </Link>
+      <Link to="/register/school">
+        <Button>Escolas</Button>
+      </Link>
+      <Link to="/students/list">
+        <Button>List de alunos</Button>
+      </Link>
     </Row>
   </AntdHeader>
 );
