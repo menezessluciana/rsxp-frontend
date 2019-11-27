@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Typography, Divider, Calendar, Button } from 'antd';
+import locale from 'antd/es/date-picker/locale/pt_BR';
+import { Typography, Divider, Calendar, DatePicker, Button } from 'antd';
 import { Select } from 'antd';
 import { COLOR_SUPORTE_SUCCESS , COLOR_SUPORTE_DANGER } from '../styles';
 
@@ -12,12 +13,13 @@ const Container = styled.div`
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 50px;
 `;
 
 const Content = styled.div`
       width: 500px;
       overflow: hidden;
+      height: 350px;
       padding: 10px 20px;
       border-radius: 10px;
       box-shadow: 0px 3px 16px #00000029;
@@ -31,6 +33,7 @@ const CustomDivider = styled(Divider)`
 
 const CustomTitle = styled.span`
     display: block;
+    margin-bottom: 5px;
 `;
 
 const SaveButton = styled(Button)`
@@ -67,23 +70,26 @@ const BookingTrainning = () =>(
                     <Title level={3}>Agendamento de treinamento</Title>
                 </div>
                 <CustomDivider />
-                <span>Selecione a data:</span>
-                <div style={{ width: 300, border: '1px solid #d9d9d9', borderRadius: 10 }}>
-                     <Calendar fullscreen={false} />
+                <div style={{margin: '15px 0'}}>
+                    <CustomTitle>Selecione a data:</CustomTitle>
+                    <DatePicker locale={locale} format="YYYY-MM-DD" />
                 </div>
-                <CustomTitle>Selecione a escola:</CustomTitle>
-                <Select defaultValue="Integral" style={{ width: 120 }}>
-                    <Option value="Objetivo">Objetivo</Option>
-                    <Option value="Anglo">Anglo</Option>
-                    <Option value="Integral">Integral</Option>
-                </Select>
-                <CustomTitle>Selecione o curso:</CustomTitle>
-                <Select defaultValue="IAJ" style={{ width: 300 }}>
-                    <Option value="OO">Orientação a objeto</Option>
-                    <Option value="IAJ">Introdução ao JavaScript</Option>
-                    <Option value="DS">Design System</Option>
-                </Select>
-                
+                <div style={{margin: '15px 0'}}>
+                    <CustomTitle>Selecione a escola:</CustomTitle>
+                    <Select defaultValue="Integral" style={{ width: 120 }}>
+                        <Option value="Objetivo">Objetivo</Option>
+                        <Option value="Anglo">Anglo</Option>
+                        <Option value="Integral">Integral</Option>
+                    </Select>
+                </div>
+                <div style={{margin: '15px 0'}}>
+                    <CustomTitle>Selecione o curso:</CustomTitle>
+                    <Select defaultValue="IAJ" style={{ width: 300 }}>
+                        <Option value="OO">Orientação a objeto</Option>
+                        <Option value="IAJ">Introdução ao JavaScript</Option>
+                        <Option value="DS">Design System</Option>
+                    </Select>
+                </div>
              <div style={{display: 'flex', justifyContent: 'flex-end', marginTop: 10, height: '100%'}}>
                  <CancelButton icon="close">Cancelar</CancelButton>
                  <SaveButton icon="save">Salvar</SaveButton>
